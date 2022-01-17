@@ -1,0 +1,29 @@
+package br.com.franca.cursomc.resources;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.franca.cursomc.domain.Categoria;
+
+@RestController
+@RequestMapping(value = "/categorias")
+public class CategoriaResource {
+
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public List<Categoria> listarCategoria(){
+		
+		Categoria categoria1 = new Categoria(1, "Informática");
+		Categoria categoria2 = new Categoria(2, "Escritório");
+		
+		List<Categoria> listaCategoria = new ArrayList<>();
+		listaCategoria.add(categoria1);
+		listaCategoria.add(categoria2);
+		
+		return listaCategoria;
+	}
+}
